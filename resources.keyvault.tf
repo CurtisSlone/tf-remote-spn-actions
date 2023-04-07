@@ -65,6 +65,10 @@ resource "azurerm_key_vault_access_policy" "current" {
 }
 
 resource "azurerm_key_vault_secret" "tfstatekvsecret" {
+  depends_on = [
+    azurerm_key_vault_access_policy.current,
+    azurerm_key_vault_access_policy.spnpolicy
+  ]
   name = "tfstatesakey"
   value = azurerm_storage_account.tfstatesa.primary_access_key
   key_vault_id = azurerm_key_vault.tfstatekv.id
