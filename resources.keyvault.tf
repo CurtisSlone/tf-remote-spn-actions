@@ -14,20 +14,30 @@ resource "azurerm_key_vault_access_policy" "spnpolicy" {
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = azuread_service_principal.GHASPN.id
     
-    key_permissions = [
+   key_permissions = [
         "Get",
-        "List"
+        "List",
+        "Create",
+        "Delete",
+        "Purge"
     ]
     secret_permissions = [
         "Get",
-        "List"
+        "List",
+        "Set",
+        "Delete",
+        "Purge",
+        "Recover"
 
         ]
 
         storage_permissions = [
         "Get",
         "GetSAS",
-        "SetSAS"
+        "SetSAS",
+        "Delete",
+        "Purge"
+
         ]
 }
 
