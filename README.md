@@ -25,6 +25,15 @@ The resource group, storage accounts and storage containers must be deployed bef
 Create an app registration, generate secret, create spn and give it contributor access to the identified subscription. Create storage accounts, storage, containers, and key vault to support access_key. The object_id must match your app registration. The storage resource depends on the spn creation.
 
 #### 2:
+From project root directory run: 
+
+```hcl
+terraform init
+terraform plan
+terraform apply --auto-approve
+```
+
+#### 3:
 
 Add relevant secrets to github repo. Create Github workflows.
 
