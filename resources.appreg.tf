@@ -16,7 +16,7 @@ resource "azuread_application" "ghactions" {
     #   id   = "b4e74841-8e56-480b-be8b-910348b18b4c" # User.ReadWrite
     #   type = "Scope"
     # }
-  }
+#   }
 }
 
 #
