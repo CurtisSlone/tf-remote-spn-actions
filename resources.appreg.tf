@@ -17,7 +17,7 @@ resource "azuread_application_password" "GHAPass" {
 # Create SPN
 #
 resource "azuread_service_principal" "GHASPN" {
-  application_id = azuread_application.ghactions.id
+  application_id = azuread_application.ghactions.application_id
 }
 
 #
