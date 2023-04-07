@@ -11,10 +11,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    storage_account_name = "testorgtfstatesak7nofldf"
-    container_name = "testorgtfdevsck7nofldf"
+    storage_account_name = "testorgtfstatesahv7z1pme"
+    container_name = "testorgtfdevschv7z1pme"
     key = "terraform.tfstate"
-    access_key = ""
   }
 }
 
