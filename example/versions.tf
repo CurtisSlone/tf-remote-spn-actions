@@ -11,6 +11,7 @@ terraform {
     }
   }
   backend "azurerm" {
+    resource_group_name = "testorg-eastus-network-artifacts-dev-rg"
     storage_account_name = "testorgtfstatesae1b06jxd"
     container_name = "testorgtfdevsce1b06jxd"
     key = "terraform.tfstate"
