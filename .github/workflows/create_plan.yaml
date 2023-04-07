@@ -1,6 +1,6 @@
 name: Create Plan
 
-on: [push, pull]
+on: [push, pull_request]
 
 permissions:
   contents: read
