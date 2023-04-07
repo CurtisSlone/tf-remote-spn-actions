@@ -24,7 +24,7 @@ resource "azuread_service_principal" "GHASPN" {
 # Assign Contributor Access to current subscription
 #
 resource "azurerm_role_assignment" "current" {
-    scope = data.azurerm_client_config.current.subscription_id
+    scope = "subscriptions/${data.azurerm_client_config.current.subscription_id}"
     role_definition_name = "Contributor"
     principal_id = azuread_service_principal.GHASPN.id
 }

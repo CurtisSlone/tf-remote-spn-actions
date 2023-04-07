@@ -26,7 +26,7 @@ Create an app registration, generate secret, create spn and give it contributor 
 
 #### 2:
 
-
+Add relevant secrets to github repo. Create Github workflows.
 
 ### Caveats
 This project is dependent upon an application registration with permissions to the relevant subscription AND keyvault
