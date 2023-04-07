@@ -4,6 +4,19 @@
 
 resource "azuread_application" "ghactions" {
   display_name = "github-actions"
+  required_resource_access {
+    resource_app_id = "00000003-0000-0000-c000-000000000000" # Microsoft Graph
+
+    resource_access {
+      id   = "df021288-bdef-4463-88db-98f22de89214" # User.Read.All
+      type = "Role"
+    }
+
+    # resource_access {
+    #   id   = "b4e74841-8e56-480b-be8b-910348b18b4c" # User.ReadWrite
+    #   type = "Scope"
+    # }
+  }
 }
 
 #
@@ -17,6 +30,9 @@ resource "azuread_application_password" "GHAPass" {
 # Create SPN
 #
 resource "azuread_service_principal" "GHASPN" {
+    depends_on = [
+      azuread_application.ghactions
+    ]
   application_id = azuread_application.ghactions.application_id
 }
 
