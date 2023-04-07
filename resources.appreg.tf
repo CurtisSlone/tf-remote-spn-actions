@@ -19,3 +19,12 @@ resource "azuread_application_password" "GHAPass" {
 resource "azuread_service_principal" "GHASPN" {
   application_id = azuread_application.ghactions.id
 }
+
+#
+# Assign Contributor Access to current subscription
+#
+resource "azurerm_role_assignment" "current" {
+    scope = data.azurerm_client_config.current.subscription_id
+    role_definition_name = "Contributor"
+    principal_id = azuread_service_principal.GHASPN.id
+}

@@ -22,11 +22,11 @@ The resource group, storage accounts and storage containers must be deployed bef
 
 #### 1:
 
-Create an app registration, grant it the Cloud App Admin, and give it contributor access to the identified subscription. This cannot be done in terraform :(
+Create an app registration, generate secret, create spn and give it contributor access to the identified subscription. Create storage accounts, storage, containers, and key vault to support access_key. The object_id must match your app registration. The storage resource depends on the spn creation.
 
 #### 2:
 
-Create storage accounts, storage, containers, and key vault to support access_key.
+
 
 ### Caveats
 This project is dependent upon an application registration with permissions to the relevant subscription AND keyvault
